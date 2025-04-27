@@ -1,6 +1,6 @@
 import pytest
 import string
-from password_generator import generate_password, check_password_strength
+from .password_generator import generate_password, check_password_strength
 
 # Тест 1: Проверка длины сгенерированного пароля
 def test_password_length():
