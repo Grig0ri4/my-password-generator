@@ -18,7 +18,6 @@ pipeline {
         stage('Setup Environment') {
             steps {
                 bat '''
-                    python --version
                     python -m venv venv
                     call venv\\Scripts\\activate
                     pip install --upgrade pip
@@ -30,8 +29,13 @@ pipeline {
             steps {
                 bat '''
                     call venv\\Scripts\\activate
-                    pytest tests/ --verbose
+                    pytest tests\\ --junitxml=reports\\test-results.xml --verbose
                 '''
+            }
+            post {
+                always {
+                    junit 'reports/test-results.xml'
+                }
             }
         }
     }
