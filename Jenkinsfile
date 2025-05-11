@@ -29,7 +29,7 @@ pipeline {
             steps {
                 bat '''
                     call venv\\Scripts\\activate
-                    pytest tests\\ --junitxml=reports\\test-results.xml --verbose
+                    "C:\\Users\\COmgo\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" -m pytest tests\\ --junitxml=reports\\test-results.xml --verbose
                 '''
             }
             post {
