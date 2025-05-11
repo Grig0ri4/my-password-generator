@@ -5,8 +5,8 @@ pipeline {
             steps {
                 bat '''
                     echo PATH=%PATH%
-                    python --version
-                    pip --version
+                    "C:\\Users\\COmgo\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" --version
+                    "C:\\Users\\COmgo\\AppData\\Local\\Programs\\Python\\Python313\\Scripts\\pip.exe" --version
                 '''
             }
         }
@@ -18,10 +18,10 @@ pipeline {
         stage('Setup Environment') {
             steps {
                 bat '''
-                    python -m venv venv
+                    "C:\\Users\\COmgo\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" -m venv venv
                     call venv\\Scripts\\activate
-                    pip install --upgrade pip
-                    pip install -r requirements.txt
+                    "C:\\Users\\COmgo\\AppData\\Local\\Programs\\Python\\Python313\\Scripts\\pip.exe" install --upgrade pip
+                    "C:\\Users\\COmgo\\AppData\\Local\\Programs\\Python\\Python313\\Scripts\\pip.exe" install -r requirements.txt
                 '''
             }
         }
